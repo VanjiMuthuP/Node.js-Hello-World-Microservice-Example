@@ -13,8 +13,8 @@ phases:
   build:
     commands:
       - echo installing Docker 
-      - yum install docker
-      - echo docker version -y
+      - yum install docker -y
+      - echo docker version
       - docker --version
       - echo Docker service start
       - service docker start
