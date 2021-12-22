@@ -13,11 +13,11 @@ phases:
   build:
     commands:
       - echo installing Docker 
-      - sudo yum install docker
+      - yum install docker
       - echo docker version
-      - sudo docker --version
+      - docker --version
       - echo Docker service start
-      - sudo service docker start
+      - service docker start
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build --no-cache -t node-app .
