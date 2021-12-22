@@ -12,15 +12,9 @@ phases:
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
     commands:
-      - echo installing Docker 
-      - yum install docker -y
-      - echo docker version
-      - docker --version
-      - echo Docker service start
-      - service docker start
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build --no-cache -t node-app .
+      - docker build --no-cache -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
     commands:
