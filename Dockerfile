@@ -1,4 +1,4 @@
-FROM node:10.16.0-alpine as build
+FROM --platform=linux/amd64 node:10.16.0-alpine as build
 
 ARG COMMIT_SHA=<not-specified>
 ENV NODE_ENV=production
